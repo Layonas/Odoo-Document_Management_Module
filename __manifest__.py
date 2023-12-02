@@ -12,6 +12,8 @@
     'version': '1.0.0',
     'depends': ['base'],
     'data': [
+        'security\ir.model.access.csv',
+        'views/menu.xml',
         'views/document_view.xml'
     ],
     'installable': True,
