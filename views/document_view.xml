@@ -1,8 +1,8 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="documnet_view_form">
-            <field name="name">Documnet Form</field>
-            <field name="model">document_management_module.document</field>
+            <field name="name">document.form</field>
+            <field name="model">document_management.document</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
