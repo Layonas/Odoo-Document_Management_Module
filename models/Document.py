@@ -7,19 +7,5 @@ class Document(models.Model):
     name = fields.Char(string="Title", required = True)
     description = fields.Text(string='Description')
     company = fields.Char(string='Company', required=True)
-    created_by = fields.Char(string='Created by')
+    created_by = fields.Many2one('res.users', string='Created by', default=lambda self: self.env.user, readonly=True)
     responsible_users = fields.Many2many('res.users', string='Responsible workers')
-
-# class document_management_module(models.Model):
-#     _name = 'document_management_module.document_management_module'
-#     _description = 'document_management_module.document_management_module'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
